@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
 
 export const LogInForm = () => {
   const navigate = useNavigate()
+  const { login } = useAuth()
   const { state } = useLocation()
 
-  const handleLogin = () => {
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     // TODO: put this behind a real API call then resolve onSuccess()
-    // logIn()
-    //   .then(() => {
-    //     navigate(state?.path || '/welcome')
-    //   })
-    //   .catch((e) => {
-    //     console.log(e)
-    //   })
+    login()
+      .then(() => {
+        navigate(state?.path || '/welcome')
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   }
 
   return (

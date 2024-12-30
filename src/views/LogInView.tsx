@@ -5,7 +5,7 @@ import { LogInForm } from '../components/LogInForm'
 export const LogInView = () => {
   return (
     <Layout>
-      <h1>Log In</h1>
+      <h1>Log In View</h1>
       <LogInForm />
     </Layout>
   )
