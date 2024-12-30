@@ -1,5 +1,5 @@
-import React from "react"
-import { v4 as uuidv4 } from "uuid"
+import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export interface Student {
   id: string
@@ -12,7 +12,7 @@ export interface Student {
 export const StudentForm = () => {
   const sampleStudentPayload: Student = {
     id: uuidv4(),
-    name: "foo",
+    name: 'foo',
     coreGoal: 0,
     totalGoal: 0,
     activeTimer: 0,

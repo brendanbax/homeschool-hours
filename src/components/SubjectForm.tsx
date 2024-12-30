@@ -1,5 +1,5 @@
-import React from "react"
-import { v4 as uuidv4 } from "uuid"
+import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export interface Subject {
   id: string
@@ -11,8 +11,8 @@ export interface Subject {
 export const SubjectForm = () => {
   const sampleSubjectPayload: Subject = {
     id: uuidv4(),
-    label: "foo",
-    color: "bar",
+    label: 'foo',
+    color: 'bar',
     isCore: false,
   }
 

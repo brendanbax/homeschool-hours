@@ -1,7 +1,7 @@
-import React from "react"
-import { Student } from "./StudentForm"
-import { Subject } from "./SubjectForm"
-import { HomeschoolEntry } from "./EntryForm"
+import React from 'react'
+import { Student } from './StudentForm'
+import { Subject } from './SubjectForm'
+import { HomeschoolEntry } from './EntryForm'
 
 export interface Term {
   id: string

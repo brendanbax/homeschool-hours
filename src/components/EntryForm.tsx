@@ -1,14 +1,14 @@
-import React from "react"
-import { UUIDTypes } from "uuid"
-import { v4 as uuidv4 } from "uuid"
-import { Subject } from "./SubjectForm"
-import { Student } from "./StudentForm"
+import React from 'react'
+import { UUIDTypes } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
+import { Subject } from './SubjectForm'
+import { Student } from './StudentForm'
 
 export interface HomeschoolEntry {
   id: UUIDTypes
   date: Date
-  subjectId: Subject["id"]
-  studentId: Student["id"]
+  subjectId: Subject['id']
+  studentId: Student['id']
   minutes: number
   isHome: boolean
   altLocation: string
@@ -23,8 +23,8 @@ export const EntryForm = () => {
     studentId: uuidv4(),
     minutes: 0,
     isHome: false,
-    altLocation: "somewhere",
-    notes: "some value",
+    altLocation: 'somewhere',
+    notes: 'some value',
   }
 
   console.log(sampleEntryPayload)
