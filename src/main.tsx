@@ -1,10 +1,13 @@
+import './index.css'
 import React, { StrictMode } from 'react'
 import { Container, createRoot } from 'react-dom/client'
-import './index.css'
-import { App } from './App'
-import { WelcomeView } from './views/WelcomeView'
-import { SettingsView } from './views/SettingsView'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { App } from './App'
+import { LogInView } from './views/LogInView'
+import { SettingsView } from './views/SettingsView'
+import { TermView } from './views/TermView'
+import { TermListView } from './views/TermListView'
+import { WelcomeView } from './views/WelcomeView'
 
 createRoot(document.getElementById('root') as Container).render(
   <StrictMode>
@@ -27,9 +30,14 @@ createRoot(document.getElementById('root') as Container).render(
       </Route>
       */}
       <Routes>
+        {/* Public routes */}
         <Route path='/' element={<App />} />
+        <Route path='/log-in' element={<LogInView />} />
+        {/* Protected routes */}
         <Route path='/welcome' element={<WelcomeView />} />
         <Route path='/settings' element={<SettingsView />} />
+        <Route path='/terms' element={<TermListView />} />
+        <Route path='/terms/:id' element={<TermView />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
