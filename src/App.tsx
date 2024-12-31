@@ -7,6 +7,7 @@ import { SettingsView } from './views/SettingsView'
 import { TermListView } from './views/TermListView'
 import { TermView } from './views/TermView'
 import { ProtectedRoutes } from './components/ProtectedRoutes'
+import { CurrentTermView } from './views/CurrentTermView'
 
 export const App = () => {
   return (
@@ -29,6 +30,7 @@ export const App = () => {
             <Route path='/log-in' element={<LogInView />} />
             {/* Protected routes */}
             <Route element={<ProtectedRoutes />}>
+              <Route path='/current' element={<CurrentTermView />} />
               <Route path='/welcome' element={<WelcomeView />} />
               <Route path='/settings' element={<SettingsView />} />
               <Route path='/terms' element={<TermListView />} />

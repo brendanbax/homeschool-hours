@@ -12,18 +12,21 @@ export const Nav = () => {
   }
 
   return (
-    <nav>
+    <nav className='bg-gray-900 text-white flex items-center'>
       {authed && (
         <>
           <ul>
             <li>
-              <Link to='/welcome'>Welcome</Link>
+              <Link to='/current'>Current Term</Link>
             </li>
             <li>
-              <Link to='/terms'>Terms</Link>
+              <Link to='/terms'>All Terms</Link>
             </li>
             <li>
               <Link to='/settings'>Settings</Link>
+            </li>
+            <li>
+              <Link to='/log-in'>Login (dupe)</Link>
             </li>
           </ul>
           <button onClick={handleLogout}>Logout</button>
