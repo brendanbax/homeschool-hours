@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TODO: create global styles here for the following... */
+
+/* TODO: Page Header */
+/* TODO: Card Container */
+/* TODO: Navigation Link (migrate styles from nav component) */
+/* TODO: Button (primary, secondary, tertiary) */
