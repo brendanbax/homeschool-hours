@@ -8,3 +8,28 @@
 /* TODO: Card Container */
 /* TODO: Navigation Link (migrate styles from nav component) */
 /* TODO: Button (primary, secondary, tertiary) */
+
+.animate-slide-left {
+  animation: slide-left 200ms forwards;
+}
+.animate-slide-right {
+  animation: slide-right 200ms forwards;
+}
+
+@keyframes slide-left {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
