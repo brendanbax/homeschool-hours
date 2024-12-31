@@ -6,7 +6,7 @@ import { WelcomeView } from './views/WelcomeView'
 import { SettingsView } from './views/SettingsView'
 import { TermListView } from './views/TermListView'
 import { TermView } from './views/TermView'
-import { RequireAuth } from './components/RequireAuth'
+import { ProtectedRoutes } from './components/ProtectedRoutes'
 
 export const App = () => {
   return (
@@ -14,59 +14,26 @@ export const App = () => {
       <AuthProvider>
         <BrowserRouter>
           {/* 
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-
-      TODO: understand this more b/c I don't really get it...
-      <Route element={<AuthLayout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-      </Route>
-
-      Read more here... https://reactrouter.com/start/library/routing#configuring-routes
-      <Route path="concerts">
-        <Route index element={<ConcertsHome />} />
-        <Route path=":city" element={<City />} />
-        <Route path="trending" element={<Trending />} />
-      </Route>
-      */}
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            TODO: understand this more b/c I don't really get it...
+            https://reactrouter.com/start/library/routing#configuring-routes
+            <Route element={<AuthLayout />}>
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+            </Route>
+          */}
           <Routes>
             {/* Public routes */}
-            <Route path='/' element={<App />} />
+            <Route path='/' element={<LogInView />} />
             <Route path='/log-in' element={<LogInView />} />
             {/* Protected routes */}
-            <Route
-              path='/welcome'
-              element={
-                <RequireAuth>
-                  <WelcomeView />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path='/settings'
-              element={
-                <RequireAuth>
-                  <SettingsView />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path='/terms'
-              element={
-                <RequireAuth>
-                  <TermListView />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path='/terms/:id'
-              element={
-                <RequireAuth>
-                  <TermView />
-                </RequireAuth>
-              }
-            />
+            <Route element={<ProtectedRoutes />}>
+              <Route path='/welcome' element={<WelcomeView />} />
+              <Route path='/settings' element={<SettingsView />} />
+              <Route path='/terms' element={<TermListView />} />
+              <Route path='/terms/:id' element={<TermView />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
