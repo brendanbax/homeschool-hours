@@ -1,11 +1,12 @@
 import React from 'react'
 
-export interface TableProps {
+interface TableProps {
   columns: { label: string; key: string }[]
   tableData: any[]
+  key: string
 }
 
-export const Table = ({ columns, tableData }: TableProps) => {
+export const Table = ({ columns, tableData, key }: TableProps) => {
   const TableHeader = ({ children }) => {
     return <th className='text-left px-2 py-1 border-b border-l border-r first:border-l-0 last:border-r-0'>{children}</th>
   }
@@ -24,9 +25,9 @@ export const Table = ({ columns, tableData }: TableProps) => {
         </thead>
         <tbody>
           {tableData.map((td, i) => (
-            <tr key={`row_${i}`} className='group'>
+            <tr key={`${key}_row_${i}`} className='group'>
               {columns.map((c, z) => {
-                return <TableCell key={`row_${i}_column_${z}`}>{td[c.key]}</TableCell>
+                return <TableCell key={`${key}_row_${i}_column_${z}`}>{td[c.key]}</TableCell>
               })}
             </tr>
           ))}
