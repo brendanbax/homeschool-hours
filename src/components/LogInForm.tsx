@@ -1,6 +1,7 @@
 import React, { FormEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import { Button } from './Button'
 
 export const LogInForm = () => {
   const navigate = useNavigate()
@@ -10,6 +11,8 @@ export const LogInForm = () => {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // TODO: put this behind a real API call then resolve onSuccess()
+    // Supabase: https://supabase.com/auth
+    // Firebase: https://firebase.google.com/docs/auth
     login()
       .then(() => {
         navigate(state?.path || '/welcome')
@@ -21,8 +24,22 @@ export const LogInForm = () => {
 
   return (
     <form onSubmit={handleLogin}>
-      <h1>Log in form</h1>
-      <button>Log In</button>
+      {/* TODO: leverage react-hook-forms where possible */}
+      {/* https://react-hook-form.com/ */}
+      <p>Email address:</p>
+      <p>Password:</p>
+      <div className='flex gap-x-2'>
+        <Button>Log in</Button>
+        <Button
+          level='secondary'
+          onClick={(e) => {
+            e.preventDefault()
+            console.log('TODO: handle password reset')
+          }}
+        >
+          Rest password
+        </Button>
+      </div>
     </form>
   )
 }
