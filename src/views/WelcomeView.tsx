@@ -5,7 +5,10 @@ export const WelcomeView = () => {
   return (
     <Layout>
       <h1>Welcome View</h1>
-      <p>Stepper to onboard new users...</p>
+      <section className='section'>
+        <p className='section-title'>Welcome View</p>
+        <p className='section-body'>Stepper for all the below...</p>
+      </section>
       <ol>
         <li>Create student(s)</li>
         <li>Create subject(s) - or use predefined ones</li>

@@ -12,7 +12,10 @@ export const CurrentTermView = () => {
           Sample action
         </Button>
       </AppHeader>
-      <p>List of associated students w actions per child</p>
+      <section className='section'>
+        <p className='section-title'>Current Term View</p>
+        <p className='section-body'>List of associated students w actions per child</p>
+      </section>
     </Layout>
   )
 }
