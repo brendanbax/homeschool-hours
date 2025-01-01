@@ -9,6 +9,16 @@
 /* TODO: Navigation Link (migrate styles from nav component) */
 /* TODO: Button (primary, secondary, tertiary) */
 
+.section {
+  @apply mt-2 mb-4;
+}
+.section-title {
+  @apply font-medium text-lg text-gray-900;
+}
+.section-body {
+  @apply font-light text-sm text-gray-700;
+}
+
 .animate-slide-left {
   animation: slide-left 200ms forwards;
 }
