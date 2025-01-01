@@ -68,7 +68,7 @@ transition-all
   }
 
   return (
-    <nav className={`${className} bg-gray-900 flex md:flex-col items-center justify-between p-4`}>
+    <nav className={`${className} bg-gray-900 flex md:flex-col items-center justify-between p-4 flex-shrink-0`}>
       {/* NOTE: Mobile navigation trigger */}
       <button className='flex md:hidden flex-col gap-y-1' onClick={() => setMobileNavIsOpen(true)}>
         <span className='w-4 h-0.5 rounded-full bg-white' />
