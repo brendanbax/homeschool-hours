@@ -49,12 +49,16 @@ export const SettingsView = () => {
       <section className='section'>
         <p className='section-title'>Students</p>
         <p className='section-body'>A list of all the students across all terms. Add and edit student details below.</p>
-        <Table key='students' columns={studentTableConfig.columns} tableData={studentTableConfig.tableData} />
+        <div className='mt-2'>
+          <Table key='students' columns={studentTableConfig.columns} tableData={studentTableConfig.tableData} />
+        </div>
       </section>
       <section className='section'>
         <p className='section-title'>Subjects</p>
         <p className='section-body'>List of subjects available across all terms.</p>
-        <Table key='subjects' columns={subjectTableConfig.columns} tableData={subjectTableConfig.tableData} />
+        <div className='mt-2'>
+          <Table key='subjects' columns={subjectTableConfig.columns} tableData={subjectTableConfig.tableData} />
+        </div>
       </section>
       <section className='section'>
         <p className='section-title'>Profile and Billing</p>
