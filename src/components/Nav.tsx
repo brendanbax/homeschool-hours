@@ -22,7 +22,6 @@ export const Nav = ({ className }: { className?: string }) => {
         <NavItem to='/current' label='CurrentTerm' icon={<AcademicCapIcon />} />
         <NavItem to='/terms' label='All Terms' icon={<ListBulletIcon />} />
         <NavItem to='/settings' label='Settings' icon={<Cog6ToothIcon />} />
-        <NavItem to='/log-in' label='Login(test)' icon={<ExclamationTriangleIcon />} />
         <div className='mt-auto'>
           <NavItem onClick={handleLogout} label='Log Out' icon={<ArrowLeftStartOnRectangleIcon />} />
         </div>
